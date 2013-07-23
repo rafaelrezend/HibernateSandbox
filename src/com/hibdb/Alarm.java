@@ -13,22 +13,25 @@ public class Alarm implements java.io.Serializable {
 	private String descr;
 	private int owner;
 	private Date instant;
-	private boolean isPrivate;
+	private boolean priv;
 
 	public Alarm() {
+		this.owner = 0;
+		this.instant = new Date(0);
+		this.priv = false;
 	}
 
-	public Alarm(int owner, Date instant, boolean isPrivate) {
+	public Alarm(int owner, Date instant, boolean priv) {
 		this.owner = owner;
 		this.instant = instant;
-		this.isPrivate = isPrivate;
+		this.priv = priv;
 	}
 
-	public Alarm(String descr, int owner, Date instant, boolean isPrivate) {
+	public Alarm(String descr, int owner, Date instant, boolean priv) {
 		this.descr = descr;
 		this.owner = owner;
 		this.instant = instant;
-		this.isPrivate = isPrivate;
+		this.priv = priv;
 	}
 
 	public Integer getId() {
@@ -63,12 +66,12 @@ public class Alarm implements java.io.Serializable {
 		this.instant = instant;
 	}
 
-	public boolean isIsPrivate() {
-		return this.isPrivate;
+	public boolean isPriv() {
+		return this.priv;
 	}
 
-	public void setIsPrivate(boolean isPrivate) {
-		this.isPrivate = isPrivate;
+	public void setPriv(boolean isPrivate) {
+		this.priv = isPrivate;
 	}
 
 }
