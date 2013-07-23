@@ -1,0 +1,23 @@
+DATABASE format
+
+Database/schema = hibdb_schema
+
+
+Table alarms
+
+============
+
+id, descr, owner, instant, priv
+
+------------
+
+id               int(11) PK
+
+descr            varchar(45)
+
+owner            int(11)
+
+instant          datetime
+
+priv             tinyint(1)
+
