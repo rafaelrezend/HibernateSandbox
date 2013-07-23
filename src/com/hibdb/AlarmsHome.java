@@ -18,7 +18,7 @@ import org.hibernate.service.ServiceRegistryBuilder;
 
 /**
  * Home object for domain model class Alarms.
- * @see com.hibdb.Alarms
+ * @see com.hibdb.Alarm
  * @author Hibernate Tools
  */
 public class AlarmsHome {
@@ -47,7 +47,7 @@ public class AlarmsHome {
 		}
 	}
 
-	public void persist(Alarms transientInstance) {
+	public void persist(Alarm transientInstance) {
 		log.debug("persisting Alarms instance");
 		try {
 			sessionFactory.getCurrentSession().persist(transientInstance);
@@ -58,7 +58,7 @@ public class AlarmsHome {
 		}
 	}
 
-	public void attachDirty(Alarms instance) {
+	public void attachDirty(Alarm instance) {
 		log.debug("attaching dirty Alarms instance");
 		try {
 			sessionFactory.getCurrentSession().saveOrUpdate(instance);
@@ -69,12 +69,13 @@ public class AlarmsHome {
 		}
 	}
 
-	public void attachClean(Alarms instance) {
+	public void attachClean(Alarm instance) {
 		log.debug("attaching clean Alarms instance");
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			Transaction tx = session.beginTransaction();
 			
+			session.save(instance);
 			session.buildLockRequest(LockOptions.NONE).lock(instance);
 			
 			tx.commit();
@@ -86,7 +87,7 @@ public class AlarmsHome {
 		}
 	}
 
-	public void delete(Alarms persistentInstance) {
+	public void delete(Alarm persistentInstance) {
 		log.debug("deleting Alarms instance");
 		try {
 			sessionFactory.getCurrentSession().delete(persistentInstance);
@@ -97,10 +98,10 @@ public class AlarmsHome {
 		}
 	}
 
-	public Alarms merge(Alarms detachedInstance) {
+	public Alarm merge(Alarm detachedInstance) {
 		log.debug("merging Alarms instance");
 		try {
-			Alarms result = (Alarms) sessionFactory.getCurrentSession().merge(
+			Alarm result = (Alarm) sessionFactory.getCurrentSession().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -110,10 +111,10 @@ public class AlarmsHome {
 		}
 	}
 
-	public Alarms findById(java.lang.Integer id) {
+	public Alarm findById(java.lang.Integer id) {
 		log.debug("getting Alarms instance with id: " + id);
 		try {
-			Alarms instance = (Alarms) sessionFactory.getCurrentSession().get(
+			Alarm instance = (Alarm) sessionFactory.getCurrentSession().get(
 					"com.hibdb.Alarms", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
@@ -127,7 +128,7 @@ public class AlarmsHome {
 		}
 	}
 
-	public List findByExample(Alarms instance) {
+	public List findByExample(Alarm instance) {
 		log.debug("finding Alarms instance by example");
 		try {
 			List results = sessionFactory.getCurrentSession()

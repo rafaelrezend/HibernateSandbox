@@ -23,15 +23,17 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		Alarms alarm1 = new Alarms();
-		Alarms alarm2 = new Alarms(3, new Date(0), true);
+		Alarm alarm1 = new Alarm();
+		Alarm alarm2 = new Alarm(3, new Date(0), true);
 		
-//		AlarmsHome alarmDAO = new AlarmsHome();
+		alarm2.setDescr("yada yada yada");
+		
+		AlarmsHome alarmDAO = new AlarmsHome();
 //		alarmDAO.attachClean(alarm1);
-//		alarmDAO.attachClean(alarm2);
+		alarmDAO.attachClean(alarm2);
 		
-		SessionFactory factory = createHibernateFactory();
-//		saveAlarm(factory.openSession(), alarm1);
+//		SessionFactory factory = createHibernateFactory();
+//		saveAlarm(factory.openSession(), alarm2);
 
 	}
 	
@@ -50,7 +52,7 @@ public class Main {
 		return factory;
 	}
 	
-	private static void saveAlarm(Session session, Alarms alarm){
+	private static void saveAlarm(Session session, Alarm alarm){
 		
 		Transaction trans = null;
 		try {

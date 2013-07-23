@@ -13,7 +13,7 @@
         <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
         
         <!-- Related to mapping START -->
-		<mapping resource="com/hibdb/Alarms.hbm.xml" />
+		<mapping resource="com/hibdb/Alarm.hbm.xml" />
 		<!-- Related to the mapping END -->
         
     </session-factory>

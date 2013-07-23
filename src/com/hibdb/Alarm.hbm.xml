@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated Jul 23, 2013 5:39:14 AM by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
-    <class name="com.hibdb.Alarms" table="alarms" catalog="hibdb_schema">
+    <class name="com.hibdb.Alarm" table="alarms">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />
