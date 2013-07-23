@@ -1,4 +1,4 @@
-package com.hibdb;
+package com.rezend.hibdb;
 
 import java.util.Iterator;
 import java.util.List;

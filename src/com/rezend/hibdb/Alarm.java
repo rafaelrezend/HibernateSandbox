@@ -1,4 +1,4 @@
-package com.hibdb;
+package com.rezend.hibdb;
 
 // Generated Jul 23, 2013 3:54:21 AM by Hibernate Tools 4.0.0
 

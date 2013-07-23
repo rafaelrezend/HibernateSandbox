@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.hibdb;
+package com.rezend.hibdb;
 
 import java.util.Date;
 
